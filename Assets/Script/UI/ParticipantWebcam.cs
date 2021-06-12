@@ -11,7 +11,7 @@ public class ParticipantWebcam : MonoBehaviour
     public Image participantWebcamVideo;
     public TMP_Text participantName;
 
-    private IPerson participant;
+    public IPerson participant;
 
     private void Start()
     {

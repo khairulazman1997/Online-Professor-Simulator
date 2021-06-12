@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameObject : MonoBehaviour
+public class OPSGameObject : MonoBehaviour
 {
-    public static GameObject Instance { get; private set; }
+    public static OPSGameObject Instance { get; private set; }
 
     /*** GAME STATE ***********************************************************/
-    public Professor Professor = new Professor();
+    public Professor Professor;
     public List<Student> StudentList = new List<Student>();
     public int AverageAllegiance;
     public int Attentiveness;
@@ -15,6 +15,7 @@ public class GameObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Professor = new Professor();
         GenerateStudents();
     }
 
