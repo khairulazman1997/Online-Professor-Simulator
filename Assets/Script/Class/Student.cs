@@ -38,4 +38,8 @@ public class Student : MonoBehaviour, IPerson
     public int FaceID;
     public int BodyID;
     
+    public void UpdateAllegiance()
+    {
+        //TODO: Add multiplier and calculations
+    }
 }
