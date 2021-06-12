@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Interest : int
+public enum Topic : int
 {
     Science = 0,
     Politics = 1,
@@ -21,7 +21,7 @@ public class Student : MonoBehaviour, IPerson
     /// if slides match this, 0.8 x if conflicting and 
     /// 1x otherwise.
     /// </summary>
-    public Interest Interest { get; private set; }
+    public Topic Interest { get; private set; }
     /// <summary>
     /// Grants a 1.2x multiplier to positive modifier to current 
     /// allegiance and 0.8x for negative modifier.
