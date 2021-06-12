@@ -12,11 +12,24 @@ public class OPSGameObject : MonoBehaviour
     public int AverageAllegiance;
     public int Attentiveness;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         Professor = new Professor();
         GenerateStudents();
+        UIController.Instance.PopulateWebcams();
     }
 
     void GenerateStudents()

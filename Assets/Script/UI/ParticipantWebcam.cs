@@ -13,14 +13,10 @@ public class ParticipantWebcam : MonoBehaviour
 
     public IPerson participant;
 
-    private void Start()
+    public void UpdateUIElements()
     {
         participantName.text = participant.Name;
         //TODO: Set the participant webcam video
-    }
-
-    private void Update()
-    {
         SetGreenOutline();
         SetReactionIcon();
     }
