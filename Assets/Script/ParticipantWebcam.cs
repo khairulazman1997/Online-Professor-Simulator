@@ -32,7 +32,7 @@ public class ParticipantWebcam : MonoBehaviour
 
     private void SetReactionIcon()
     {
-        bool isReacting = participant.reaction > 0;
+        bool isReacting = participant.Reaction > 0;
         if (isReacting)
         {
             //TODO: Set reaction icon
