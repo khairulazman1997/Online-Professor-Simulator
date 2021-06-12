@@ -6,7 +6,6 @@ public class Slide : MonoBehaviour
 {
     public Topic topic;
     public int AllegianceModifier;
-    public int AttentionModiferl;
+    public int AttentionModifier;
     public int SuspicionModifier;
-
 }
