@@ -160,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6179881003168512302}
   - component: {fileID: 8659126635128595520}
+  - component: {fileID: 189686523760985696}
   m_Layer: 5
   m_Name: ParticipantWebcam
   m_TagString: Untagged
@@ -210,6 +211,22 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &189686523760985696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6179881003168512303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abdcf882d0aef140b2deb0f663485ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greenOutline: {fileID: 7224020404552950745}
+  reactionIcon: {fileID: 3762545639768188443}
+  participantWebcamVideo: {fileID: 6179881002615134284}
+  participantName: {fileID: 6179881003233524818}
 --- !u!1 &6179881003233524828
 GameObject:
   m_ObjectHideFlags: 0
