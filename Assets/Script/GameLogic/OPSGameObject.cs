@@ -12,6 +12,8 @@ public class OPSGameObject : MonoBehaviour
     public int AverageAllegiance;
     public int Attentiveness;
     public List<Slide> SlideList;
+    public int RoundCounter = 0;
+    public int LessonCounter = 0;
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class OPSGameObject : MonoBehaviour
         Professor = new Professor();
         GenerateStudents();
         Attentiveness = 800;
-        UIController.Instance.UpdateCallView();
+        StartNewLesson();
     }
 
     void GenerateStudents()
@@ -130,7 +132,62 @@ public class OPSGameObject : MonoBehaviour
 
     public void NextSlide()
     {
-        UIController.Instance.ShareView.gameObject.SetActive(false);
+        RoundCounter++;
+        if (RoundCounter >= 5)
+        {
+            UIController.Instance.OpenReportView();
+            LessonCounter++;
+            return;
+        }
         UIController.Instance.OpenCallView();
+    }
+
+    public void StartNewLesson()
+    {
+        if (LessonCounter == 3)
+        {
+            //TODO: Play end of game
+            return;
+        }
+
+        Attentiveness = 500 + (int) (Random.value * 500);
+        RoundCounter = 0;
+        int noActiveStudents = 0;
+        int totalAllegiance = 0;
+        foreach (Student student in StudentList)
+        {
+            if (student.Status == Status.Active)
+            {
+                noActiveStudents++;
+                totalAllegiance += student.Allegiance;
+            }
+            if (student.Status == Status.Kicked)
+            {
+                noActiveStudents++;
+                totalAllegiance += student.Allegiance;
+                student.Status = Status.Active;
+            }
+        }
+
+        while (noActiveStudents < 15)
+        {
+            Student newStudent = new Student();
+            StudentList.Add(newStudent);
+            noActiveStudents++;
+        }
+        AverageAllegiance = totalAllegiance / noActiveStudents;
+        UIController.Instance.PopulateWebcams();
+        UIController.Instance.OpenCallView();
+    }
+
+    public int FindNextAvailableStudent(int index)
+    {
+        Debug.Log(index);
+        Student student = StudentList[index];
+        if (student.Status == Status.Active)
+        {
+            return index;
+        }
+        return FindNextAvailableStudent(index + 1);
     }
 }

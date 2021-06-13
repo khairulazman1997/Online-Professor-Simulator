@@ -17,6 +17,8 @@ public class UIController : MonoBehaviour
     //SlidePickerView elements
     public SlidePickerView SlidePickerView;
 
+    public PostLessonView PostLessonView;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,16 +33,27 @@ public class UIController : MonoBehaviour
 
     public void UpdateCallView()
     {
-        PopulateWebcams();
+        UpdateWebcams();
         CallView.UpdateLevels();
     }
 
     public void PopulateWebcams()
     {
         Webcams[0].participant = OPSGameObject.Instance.Professor;
+        int index = 0;
         for (int i = 1; i < Webcams.Count; i++)
         {
-            Webcams[i].participant = OPSGameObject.Instance.StudentList[i - 1];
+            index = OPSGameObject.Instance.FindNextAvailableStudent(index);
+            Webcams[i].participant = OPSGameObject.Instance.StudentList[index];
+            Webcams[i].UpdateUIElements();
+            index++;
+        }
+    }
+
+    public void UpdateWebcams()
+    {
+        for (int i = 1; i < Webcams.Count; i++)
+        {
             Webcams[i].UpdateUIElements();
         }
     }
@@ -50,10 +63,14 @@ public class UIController : MonoBehaviour
         UpdateCallView();
         CallView.gameObject.SetActive(true);
         SlidePickerView.gameObject.SetActive(false);
+        PostLessonView.gameObject.SetActive(false);
+        ShareView.gameObject.SetActive(false);
+        CallView.ShareScreenButton.interactable = true;
     }
 
     public void OpenStudentShareView(Slide slide, Student student)
     {
+        CallView.ShareScreenButton.interactable = false;
         ShareView.student = student;
         ShareView.slide = slide;
         ShareView.UpdateStudentShareView();
@@ -72,6 +89,14 @@ public class UIController : MonoBehaviour
             slideView.Slide = slide;
             slideView.UpdateSlideView();
         }
+    }
+
+    public void OpenReportView()
+    {
+        //Update Report View
+        CallView.gameObject.SetActive(false);
+        SlidePickerView.gameObject.SetActive(false);
+        PostLessonView.gameObject.SetActive(true);
     }
 
 }

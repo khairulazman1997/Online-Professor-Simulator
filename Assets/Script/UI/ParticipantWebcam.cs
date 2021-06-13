@@ -18,6 +18,7 @@ public class ParticipantWebcam : MonoBehaviour
     {
         participantName.text = participant.Name;
         //TODO: Set the participant webcam video
+        //TODO: Set the video to Disconnected if kicked
         SetGreenOutline();
         SetReactionIcon();
         allegiance.text = "" + participant.Allegiance;

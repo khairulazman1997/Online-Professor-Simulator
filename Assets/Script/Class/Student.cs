@@ -8,7 +8,7 @@ public enum Topic : int
     Math = 1,
     Geography = 2,
     Animals = 3,
-    TheArts = 4,
+    Arts = 4,
     Music = 5,
     History = 6,
     Politics = 7
@@ -60,7 +60,7 @@ public class Student : IPerson
     public Student()
     {
         //TODO: Get a name list
-        Name = "Lol";
+        Name = "" + OPSGameObject.Instance.StudentList.Count;
         Reaction = 0;
         isSpeaking = false;
         Status = Status.Active;
