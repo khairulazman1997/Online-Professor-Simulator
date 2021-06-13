@@ -8,7 +8,7 @@ public enum Topic : int
     Math = 1,
     Geography = 2,
     Animals = 3,
-    TheArts = 4,
+    Arts = 4,
     Music = 5,
     History = 6,
     Politics = 7

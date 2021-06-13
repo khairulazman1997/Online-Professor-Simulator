@@ -12,6 +12,8 @@ public class OPSGameObject : MonoBehaviour
     public int AverageAllegiance;
     public int Attentiveness;
     public List<Slide> SlideList;
+    public int RoundCounter = 0;
+    public int LessonCounter = 0;
 
     private void Awake()
     {
@@ -130,6 +132,7 @@ public class OPSGameObject : MonoBehaviour
 
     public void NextSlide()
     {
+        RoundCounter++;
         UIController.Instance.ShareView.gameObject.SetActive(false);
         UIController.Instance.OpenCallView();
     }

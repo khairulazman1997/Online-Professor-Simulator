@@ -1776,6 +1776,8 @@ MonoBehaviour:
   AverageAllegiance: 0
   Attentiveness: 800
   SlideList: []
+  RoundCounter: 0
+  LessonCounter: 0
 --- !u!1001 &442085721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4313,6 +4315,18 @@ MonoBehaviour:
     NeutralOpinion: 
     Opinion: 0
   ConfirmButton: {fileID: 1527672750}
+--- !u!114 &1225096153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8511119097882196138, guid: 1209876259bd76849b701458a1ae70f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1317817708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1227061779
 GameObject:
   m_ObjectHideFlags: 0
@@ -6069,6 +6083,7 @@ MonoBehaviour:
   AttentionLevel: {fileID: 187527226}
   AllegianceLevel: {fileID: 1327091974}
   SuspicionLevel: {fileID: 1382096045}
+  ShareScreenButton: {fileID: 1225096153}
 --- !u!1 &1527672748
 GameObject:
   m_ObjectHideFlags: 0

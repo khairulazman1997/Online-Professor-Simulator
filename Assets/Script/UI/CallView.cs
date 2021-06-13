@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CallView : MonoBehaviour
 {
     public TMP_Text AttentionLevel;
     public TMP_Text AllegianceLevel;
     public TMP_Text SuspicionLevel;
+
+    public Button ShareScreenButton;
 
     public void UpdateLevels()
     {

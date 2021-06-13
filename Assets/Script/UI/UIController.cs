@@ -50,10 +50,12 @@ public class UIController : MonoBehaviour
         UpdateCallView();
         CallView.gameObject.SetActive(true);
         SlidePickerView.gameObject.SetActive(false);
+        CallView.ShareScreenButton.interactable = true;
     }
 
     public void OpenStudentShareView(Slide slide, Student student)
     {
+        CallView.ShareScreenButton.interactable = false;
         ShareView.student = student;
         ShareView.slide = slide;
         ShareView.UpdateStudentShareView();
