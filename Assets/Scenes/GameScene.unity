@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StudentName: {fileID: 2058183046}
-  Opinion: {fileID: 442955012}
+  OpinionText: {fileID: 442955012}
   slide:
     ID: 0
     Topic: 0
@@ -1048,6 +1048,7 @@ MonoBehaviour:
     ProOpinion: 
     AntiOpinion: 
     NeutralOpinion: 
+    Opinion: 0
 --- !u!1 &282497196
 GameObject:
   m_ObjectHideFlags: 0
@@ -4274,6 +4275,7 @@ MonoBehaviour:
     ProOpinion: 
     AntiOpinion: 
     NeutralOpinion: 
+    Opinion: 0
   ConfirmButton: {fileID: 1527672750}
 --- !u!1 &1227061779
 GameObject:

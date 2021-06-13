@@ -45,6 +45,7 @@ public class Student : IPerson
     /// anti-state sentiments. Maxes out at 1000
     /// </summary>
     public int Allegiance;
+    public Opinion Opinion;
 
     //Image IDs
     public int HairID;
@@ -66,6 +67,7 @@ public class Student : IPerson
         Loyalty = 1;
 
         Allegiance = (int) (2000 * Random.value) - 1000;
+        Opinion = CalculateOpinion();
 
         HairID = (int)(8 * Random.value);
         FaceID = (int)(8 * Random.value);
@@ -89,5 +91,18 @@ public class Student : IPerson
 
         Allegiance = Mathf.Min(Allegiance + change, 1000);
         Allegiance = Mathf.Max(Allegiance, -1000);
+        Opinion = CalculateOpinion();
+    }
+
+    private Opinion CalculateOpinion()
+    {
+        if (Allegiance > 0)
+        {
+            return Opinion.Pro;
+        } else if (Allegiance < 0)
+        {
+            return Opinion.Anti;
+        }
+        return Opinion.Neutral;
     }
 }

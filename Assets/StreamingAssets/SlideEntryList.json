@@ -7,9 +7,10 @@
             "AllegianceModifier": 100,
             "AttentionModifier": 100,
             "SuspicionModifier": -100,
-            "ProOpinion": "Test1",
-            "AntiOpinion": "Test2",
-            "NeutralOpinion": "Test3"
+            "ProOpinion": "Pro1",
+            "AntiOpinion": "Anti1",
+            "NeutralOpinion": "Neutral1",
+            "Opinion": 0
         },
         {
             "ID": 1,
@@ -17,9 +18,10 @@
             "AllegianceModifier": 200,
             "AttentionModifier": 50,
             "SuspicionModifier": -100,
-            "ProOpinion": "Test4",
-            "AntiOpinion": "Test5",
-            "NeutralOpinion": "Test6"
+            "ProOpinion": "Pro2",
+            "AntiOpinion": "Anti2",
+            "NeutralOpinion": "Neutral2",
+            "Opinion": 0
         },
         {
             "ID": 3,
@@ -27,9 +29,10 @@
             "AllegianceModifier": -100,
             "AttentionModifier": 100,
             "SuspicionModifier": 100,
-            "ProOpinion": "Test7",
-            "AntiOpinion": "Test8",
-            "NeutralOpinion": "Test9"
+            "ProOpinion": "Pro3",
+            "AntiOpinion": "Anit3",
+            "NeutralOpinion": "Neu3",
+            "Opinion": 0
         }
     ]
 }

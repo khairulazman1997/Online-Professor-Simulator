@@ -51,11 +51,11 @@ public class UIController : MonoBehaviour
         SlidePickerView.gameObject.SetActive(false);
     }
 
-    public void OpenStudentShareView(string opinion, Slide slide, Student student)
+    public void OpenStudentShareView(Slide slide, Student student)
     {
         ShareView.student = student;
         ShareView.slide = slide;
-        ShareView.UpdateStudentShareView(opinion);
+        ShareView.UpdateStudentShareView();
     }
 
     public void StartSlidePicker()
