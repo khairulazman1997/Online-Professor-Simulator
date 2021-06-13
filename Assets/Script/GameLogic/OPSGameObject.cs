@@ -11,6 +11,7 @@ public class OPSGameObject : MonoBehaviour
     public List<Student> StudentList = new List<Student>();
     public int AverageAllegiance;
     public int Attentiveness;
+    public List<Slide> SlideList;
 
     private void Awake()
     {
@@ -27,10 +28,12 @@ public class OPSGameObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SlideList = UtilityTools.GenerateSlideListFromJSON();
         Professor = new Professor();
         GenerateStudents();
         Attentiveness = 0;
         UIController.Instance.UpdateView();
+        UIController.Instance.StartSlidePicker();
     }
 
     void GenerateStudents()
