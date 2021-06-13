@@ -5,8 +5,13 @@ using UnityEngine;
 public enum Topic : int
 {
     Science = 0,
-    Politics = 1,
-    Economy = 2
+    Math = 1,
+    Geography = 2,
+    Animals = 3,
+    TheArts = 4,
+    Music = 5,
+    History = 6,
+    Politics = 7
 }
 
 public enum Status: int
