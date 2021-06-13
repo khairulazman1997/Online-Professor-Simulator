@@ -10,6 +10,7 @@ public class ParticipantWebcam : MonoBehaviour
     public Image reactionIcon;
     public Image participantWebcamVideo;
     public TMP_Text participantName;
+    public TMP_Text allegiance;
 
     public IPerson participant;
 
@@ -19,6 +20,7 @@ public class ParticipantWebcam : MonoBehaviour
         //TODO: Set the participant webcam video
         SetGreenOutline();
         SetReactionIcon();
+        allegiance.text = "" + participant.Allegiance;
     }
 
     private void SetGreenOutline()

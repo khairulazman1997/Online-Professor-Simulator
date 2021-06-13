@@ -17,10 +17,21 @@ public class Slide
     public string ProOpinion;
     public string AntiOpinion;
     public string NeutralOpinion;
+
+    public Opinion Opinion;
+
 }
 
 [Serializable]
 public class SlideEntryList
 {
     public List<Slide> SlideEntries;
+}
+
+public enum Opinion: int
+{
+    None = 0,
+    Pro = 1,
+    Anti = 2,
+    Neutral = 3
 }

@@ -31,9 +31,8 @@ public class OPSGameObject : MonoBehaviour
         SlideList = UtilityTools.GenerateSlideListFromJSON();
         Professor = new Professor();
         GenerateStudents();
-        Attentiveness = 0;
-        UIController.Instance.UpdateView();
-        UIController.Instance.StartSlidePicker();
+        Attentiveness = 800;
+        UIController.Instance.UpdateCallView();
     }
 
     void GenerateStudents()
@@ -65,7 +64,8 @@ public class OPSGameObject : MonoBehaviour
         {
             if (student.Status == Status.Active)
             {
-                student.UpdateAllegiance(Attentiveness / 1000, slide.AllegianceModifier, slide.Topic);
+                float attentionMultiplier = (float)Attentiveness / 1000;
+                student.UpdateAllegiance(attentionMultiplier, slide.AllegianceModifier, slide.Topic);
                 totalAllegiance += student.Allegiance;
                 noActiveStudents++;
             }
@@ -74,42 +74,63 @@ public class OPSGameObject : MonoBehaviour
         AverageAllegiance = totalAllegiance / noActiveStudents;
 
         //Choose an opinion
-        string Opinion = ChooseOpinion(slide);
+        slide.Opinion = ChooseOpinion();
 
         //Choose a student
-
-        Student chosenStudent = ChooseStudent();
+        Student chosenStudent = ChooseStudent(slide, 5);
 
         UIController.Instance.OpenCallView();
-        UIController.Instance.OpenStudentShareView(Opinion, slide, chosenStudent);
+        UIController.Instance.OpenStudentShareView(slide, chosenStudent);
+        UIController.Instance.ShareView.gameObject.SetActive(true);
     }
 
-    private string ChooseOpinion(Slide slide)
+    private Opinion ChooseOpinion()
     {
         float value = Random.value;
         if (value > 0.6)
         {
-            return slide.ProOpinion;
+            return Opinion.Pro;
         } else if (value > 0.2)
         {
-            return slide.AntiOpinion;
+            return Opinion.Anti;
         } else
         {
-            return slide.NeutralOpinion;
+            return Opinion.Neutral;
         }
     }
 
-    private Student ChooseStudent()
+    private Student ChooseStudent(Slide slide, int count)
     {
         //TODO: choose a student that has same opinion
         Student chosenStudent = StudentList[Mathf.FloorToInt(Random.value * StudentList.Count)];
-        if (chosenStudent.Status == Status.Active)
+        if ((chosenStudent.Status == Status.Active && chosenStudent.Opinion == slide.Opinion) || count <=0)
         {
             return chosenStudent;
         } else
         {
-            return ChooseStudent();
+            return ChooseStudent(slide, count - 1);
         }
     }
-    
+
+    public void ModifyStudentsAllegiance(int allegianceModifier)
+    {
+        int totalAllegiance = 0;
+        int noActiveStudents = 0;
+        foreach(Student student in StudentList)
+        {
+            if (student.Status == Status.Active)
+            {
+                student.UpdateAllegiance(allegianceModifier);
+                totalAllegiance += student.Allegiance;
+                noActiveStudents++;
+            }
+        }
+        AverageAllegiance = totalAllegiance / noActiveStudents;
+    }
+
+    public void NextSlide()
+    {
+        UIController.Instance.ShareView.gameObject.SetActive(false);
+        UIController.Instance.OpenCallView();
+    }
 }

@@ -15,4 +15,9 @@ public class CallView : MonoBehaviour
         AllegianceLevel.text = "Allegiance: " + OPSGameObject.Instance.AverageAllegiance;
         SuspicionLevel.text = "Suspicion: " + OPSGameObject.Instance.Professor.SuspicionLevel;
     }
+
+    public void OnClickShareScreen()
+    {
+        UIController.Instance.StartSlidePicker();
+    }
 }
