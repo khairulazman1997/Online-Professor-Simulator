@@ -150,7 +150,7 @@ public class OPSGameObject : MonoBehaviour
             //TODO: Play end of game
             return;
         }
-
+        Events.Clear();
         Attentiveness = 500 + (int) (Random.value * 500);
         RoundCounter = 0;
         int noActiveStudents = 0;
