@@ -35,6 +35,7 @@ public class StudentShareView : MonoBehaviour
         {
             OPSGameObject.Instance.ModifyStudentsAllegiance(-50);
         }
+        OPSGameObject.Instance.NextSlide();
     }
 
     public void OnClickBerate()
@@ -47,22 +48,26 @@ public class StudentShareView : MonoBehaviour
         {
             OPSGameObject.Instance.ModifyStudentsAllegiance(50);
         }
+        OPSGameObject.Instance.NextSlide();
     }
 
     public void OnClickNod()
     {
         OPSGameObject.Instance.Attentiveness += 50;
+        OPSGameObject.Instance.NextSlide();
     }
 
     public void OnClickKick()
     {
         student.Status = Status.Kicked;
         OPSGameObject.Instance.Attentiveness -=100;
+        OPSGameObject.Instance.NextSlide();
     }
 
     public void OnClickReport()
     {
         student.Status = Status.Reported;
         OPSGameObject.Instance.Attentiveness -= 100;
+        OPSGameObject.Instance.NextSlide();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void UpdateView()
+    public void UpdateCallView()
     {
         PopulateWebcams();
         CallView.UpdateLevels();
@@ -46,7 +47,7 @@ public class UIController : MonoBehaviour
 
     public void OpenCallView()
     {
-        UpdateView();
+        UpdateCallView();
         CallView.gameObject.SetActive(true);
         SlidePickerView.gameObject.SetActive(false);
     }

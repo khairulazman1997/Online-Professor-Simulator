@@ -32,8 +32,7 @@ public class OPSGameObject : MonoBehaviour
         Professor = new Professor();
         GenerateStudents();
         Attentiveness = 800;
-        UIController.Instance.UpdateView();
-        UIController.Instance.StartSlidePicker();
+        UIController.Instance.UpdateCallView();
     }
 
     void GenerateStudents()
@@ -82,6 +81,7 @@ public class OPSGameObject : MonoBehaviour
 
         UIController.Instance.OpenCallView();
         UIController.Instance.OpenStudentShareView(slide, chosenStudent);
+        UIController.Instance.ShareView.gameObject.SetActive(true);
     }
 
     private Opinion ChooseOpinion()
@@ -126,5 +126,11 @@ public class OPSGameObject : MonoBehaviour
             }
         }
         AverageAllegiance = totalAllegiance / noActiveStudents;
+    }
+
+    public void NextSlide()
+    {
+        UIController.Instance.ShareView.gameObject.SetActive(false);
+        UIController.Instance.OpenCallView();
     }
 }
