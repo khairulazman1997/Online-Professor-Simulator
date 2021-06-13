@@ -12,6 +12,7 @@ public class OPSGameObject : MonoBehaviour
     public int AverageAllegiance;
     public int Attentiveness;
     public List<Slide> SlideList;
+    public List<LessonEvent> Events = new List<LessonEvent>();
     public int RoundCounter = 0;
     public int LessonCounter = 0;
 
