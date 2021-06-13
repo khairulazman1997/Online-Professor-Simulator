@@ -60,7 +60,7 @@ public class Student : IPerson
     public Student()
     {
         //TODO: Get a name list
-        Name = "Lol";
+        Name = "" + OPSGameObject.Instance.StudentList.Count;
         Reaction = 0;
         isSpeaking = false;
         Status = Status.Active;
