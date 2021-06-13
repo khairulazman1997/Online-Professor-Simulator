@@ -43,6 +43,7 @@ public class SlideView : MonoBehaviour
         UIController.Instance.SlidePickerView.SelectedSlide = this.Slide;
         UIController.Instance.SlidePickerView.ResetSelected();
         this.isSelected = true;
+        UIController.Instance.SlidePickerView.ConfirmButton.interactable = true;
         UpdateSlideView();
     }
 }

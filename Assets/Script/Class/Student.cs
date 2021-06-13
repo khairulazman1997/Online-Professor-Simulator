@@ -63,16 +63,31 @@ public class Student : IPerson
         Interest = (Topic) interest;
 
         //TODO: Set Loyalty
-        Loyalty = 0;
+        Loyalty = 1;
 
-        Allegiance = (int) (1000 * Random.value);
+        Allegiance = (int) (2000 * Random.value) - 1000;
 
         HairID = (int)(8 * Random.value);
         FaceID = (int)(8 * Random.value);
         BodyID = (int)(8 * Random.value);
     }
-    public void UpdateAllegiance()
+    public void UpdateAllegiance(float attentionMultiplier, int allegianceModifier, Topic topic)
     {
-        //TODO: Add multiplier and calculations
+        int change;
+
+        //Check whether topic is Student's interest
+        if (Mathf.Abs((int)topic - (int)Interest) == 4)
+        {
+            change = (int)(allegianceModifier * attentionMultiplier * 0.8);
+        } else if (topic == Interest)
+        {
+            change = (int)(allegianceModifier * attentionMultiplier * 1.2);
+        } else
+        {
+            change = (int)(allegianceModifier * attentionMultiplier);
+        }
+
+        Allegiance = Mathf.Min(Allegiance + change, 1000);
+        Allegiance = Mathf.Max(Allegiance, -1000);
     }
 }

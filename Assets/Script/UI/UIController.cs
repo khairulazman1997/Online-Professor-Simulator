@@ -41,10 +41,18 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void OpenCallView()
+    {
+        UpdateView();
+        CallView.gameObject.SetActive(true);
+        SlidePickerView.gameObject.SetActive(false);
+    }
+
     public void StartSlidePicker()
     {
         CallView.gameObject.SetActive(false);
         SlidePickerView.gameObject.SetActive(true);
+        SlidePickerView.ResetSelected();
         foreach (SlideView slideView in SlidePickerView.Slides)
         {
             int slideIndex = Mathf.FloorToInt(Random.value * OPSGameObject.Instance.SlideList.Count);
