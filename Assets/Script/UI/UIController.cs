@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     public static UIController Instance { get; private set; }
+    public CallView CallView;
     public List<ParticipantWebcam> Webcams;
 
     private void Awake()
@@ -19,10 +20,10 @@ public class UIController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void UpdateView()
     {
-
+        PopulateWebcams();
+        CallView.UpdateLevels();
     }
 
     public void PopulateWebcams()
@@ -30,7 +31,6 @@ public class UIController : MonoBehaviour
         Webcams[0].participant = OPSGameObject.Instance.Professor;
         for (int i = 1; i < Webcams.Count; i++)
         {
-            Debug.Log(i);
             Webcams[i].participant = OPSGameObject.Instance.StudentList[i - 1];
             Webcams[i].UpdateUIElements();
         }

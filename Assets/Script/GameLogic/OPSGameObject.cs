@@ -29,7 +29,8 @@ public class OPSGameObject : MonoBehaviour
     {
         Professor = new Professor();
         GenerateStudents();
-        UIController.Instance.PopulateWebcams();
+        Attentiveness = 0;
+        UIController.Instance.UpdateView();
     }
 
     void GenerateStudents()
