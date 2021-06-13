@@ -10,12 +10,15 @@ public class Professor : IPerson
     public bool isSpeaking { get; set; }
     public int SuspicionLevel { get; set; }
 
+    public int Allegiance { get; set; }
+
     public Professor()
     {
         Name = "Mulberry";
         Reaction = 0;
         isSpeaking = false;
         SuspicionLevel = 0;
+        Allegiance = 0;
     }
 
     public void UpdateSuspicionLevel(int Change)

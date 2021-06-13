@@ -14,4 +14,5 @@ public interface IPerson
     Reaction Reaction { get; set; }
     bool isSpeaking { get; set; }
 
+    int Allegiance { get; set; }
 }

@@ -1197,7 +1197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 284408247}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278421243}
+        m_TargetAssemblyTypeName: StudentShareView, Assembly-CSharp
+        m_MethodName: OnClickKick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &284408247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,7 +1679,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372126085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278421243}
+        m_TargetAssemblyTypeName: StudentShareView, Assembly-CSharp
+        m_MethodName: OnClickReport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &372126085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,7 +1774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AverageAllegiance: 0
-  Attentiveness: 0
+  Attentiveness: 800
   SlideList: []
 --- !u!1001 &442085721
 PrefabInstance:
@@ -2243,7 +2267,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 507976397}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278421243}
+        m_TargetAssemblyTypeName: StudentShareView, Assembly-CSharp
+        m_MethodName: OnClickNod
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &507976397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4359,7 +4395,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1227061782}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278421243}
+        m_TargetAssemblyTypeName: StudentShareView, Assembly-CSharp
+        m_MethodName: OnClickPraise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1227061782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5680,7 +5728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1399050376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278421243}
+        m_TargetAssemblyTypeName: StudentShareView, Assembly-CSharp
+        m_MethodName: OnClickBerate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1399050376
 MonoBehaviour:
   m_ObjectHideFlags: 0

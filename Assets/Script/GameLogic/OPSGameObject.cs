@@ -31,7 +31,7 @@ public class OPSGameObject : MonoBehaviour
         SlideList = UtilityTools.GenerateSlideListFromJSON();
         Professor = new Professor();
         GenerateStudents();
-        Attentiveness = 0;
+        Attentiveness = 800;
         UIController.Instance.UpdateView();
         UIController.Instance.StartSlidePicker();
     }
@@ -65,7 +65,8 @@ public class OPSGameObject : MonoBehaviour
         {
             if (student.Status == Status.Active)
             {
-                student.UpdateAllegiance(Attentiveness / 1000, slide.AllegianceModifier, slide.Topic);
+                float attentionMultiplier = (float)Attentiveness / 1000;
+                student.UpdateAllegiance(attentionMultiplier, slide.AllegianceModifier, slide.Topic);
                 totalAllegiance += student.Allegiance;
                 noActiveStudents++;
             }
@@ -110,5 +111,20 @@ public class OPSGameObject : MonoBehaviour
             return ChooseStudent(slide, count - 1);
         }
     }
-    
+
+    public void ModifyStudentsAllegiance(int allegianceModifier)
+    {
+        int totalAllegiance = 0;
+        int noActiveStudents = 0;
+        foreach(Student student in StudentList)
+        {
+            if (student.Status == Status.Active)
+            {
+                student.UpdateAllegiance(allegianceModifier);
+                totalAllegiance += student.Allegiance;
+                noActiveStudents++;
+            }
+        }
+        AverageAllegiance = totalAllegiance / noActiveStudents;
+    }
 }

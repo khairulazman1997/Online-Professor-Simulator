@@ -25,4 +25,44 @@ public class StudentShareView : MonoBehaviour
             OpinionText.text = slide.NeutralOpinion;
         }
     }
+
+    public void OnClickPraise()
+    {
+        if(slide.Opinion == Opinion.Pro)
+        {
+            OPSGameObject.Instance.ModifyStudentsAllegiance(50);
+        } else if (slide.Opinion == Opinion.Anti)
+        {
+            OPSGameObject.Instance.ModifyStudentsAllegiance(-50);
+        }
+    }
+
+    public void OnClickBerate()
+    {
+        if (slide.Opinion == Opinion.Pro)
+        {
+            OPSGameObject.Instance.ModifyStudentsAllegiance(-50);
+        }
+        else if (slide.Opinion == Opinion.Anti)
+        {
+            OPSGameObject.Instance.ModifyStudentsAllegiance(50);
+        }
+    }
+
+    public void OnClickNod()
+    {
+        OPSGameObject.Instance.Attentiveness += 50;
+    }
+
+    public void OnClickKick()
+    {
+        student.Status = Status.Kicked;
+        OPSGameObject.Instance.Attentiveness -=100;
+    }
+
+    public void OnClickReport()
+    {
+        student.Status = Status.Reported;
+        OPSGameObject.Instance.Attentiveness -= 100;
+    }
 }

@@ -44,7 +44,7 @@ public class Student : IPerson
     /// Positive represents pro-state sentiments and negative represents
     /// anti-state sentiments. Maxes out at 1000
     /// </summary>
-    public int Allegiance;
+    public int Allegiance { get; set; }
     public Opinion Opinion;
 
     //Image IDs
@@ -76,7 +76,7 @@ public class Student : IPerson
     public void UpdateAllegiance(float attentionMultiplier, int allegianceModifier, Topic topic)
     {
         int change;
-
+        Debug.Log(attentionMultiplier);
         //Check whether topic is Student's interest
         if (Mathf.Abs((int)topic - (int)Interest) == 4)
         {
@@ -88,8 +88,15 @@ public class Student : IPerson
         {
             change = (int)(allegianceModifier * attentionMultiplier);
         }
-
+        Debug.Log(change);
         Allegiance = Mathf.Min(Allegiance + change, 1000);
+        Allegiance = Mathf.Max(Allegiance, -1000);
+        Opinion = CalculateOpinion();
+    }
+
+    public void UpdateAllegiance(int allegianceModifier)
+    {
+        Allegiance = Mathf.Min(Allegiance + allegianceModifier, 1000);
         Allegiance = Mathf.Max(Allegiance, -1000);
         Opinion = CalculateOpinion();
     }
