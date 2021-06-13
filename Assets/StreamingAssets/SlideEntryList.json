@@ -6,21 +6,30 @@
             "Topic": 0,
             "AllegianceModifier": 100,
             "AttentionModifier": 100,
-            "SuspicionModifier": -100
+            "SuspicionModifier": -100,
+            "ProOpinion": "Test1",
+            "AntiOpinion": "Test2",
+            "NeutralOpinion": "Test3"
         },
         {
             "ID": 1,
             "Topic": 0,
             "AllegianceModifier": 200,
             "AttentionModifier": 50,
-            "SuspicionModifier": -100
+            "SuspicionModifier": -100,
+            "ProOpinion": "Test4",
+            "AntiOpinion": "Test5",
+            "NeutralOpinion": "Test6"
         },
         {
             "ID": 3,
             "Topic": 0,
             "AllegianceModifier": -100,
             "AttentionModifier": 100,
-            "SuspicionModifier": 100
+            "SuspicionModifier": 100,
+            "ProOpinion": "Test7",
+            "AntiOpinion": "Test8",
+            "NeutralOpinion": "Test9"
         }
     ]
 }

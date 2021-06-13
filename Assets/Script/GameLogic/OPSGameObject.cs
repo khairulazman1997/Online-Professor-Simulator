@@ -72,7 +72,44 @@ public class OPSGameObject : MonoBehaviour
         }
         Debug.Log("Total number of active students = " + noActiveStudents);
         AverageAllegiance = totalAllegiance / noActiveStudents;
+
+        //Choose an opinion
+        string Opinion = ChooseOpinion(slide);
+
+        //Choose a student
+
+        Student chosenStudent = ChooseStudent();
+
         UIController.Instance.OpenCallView();
+        UIController.Instance.OpenStudentShareView(Opinion, slide, chosenStudent);
+    }
+
+    private string ChooseOpinion(Slide slide)
+    {
+        float value = Random.value;
+        if (value > 0.6)
+        {
+            return slide.ProOpinion;
+        } else if (value > 0.2)
+        {
+            return slide.AntiOpinion;
+        } else
+        {
+            return slide.NeutralOpinion;
+        }
+    }
+
+    private Student ChooseStudent()
+    {
+        //TODO: choose a student that has same opinion
+        Student chosenStudent = StudentList[Mathf.FloorToInt(Random.value * StudentList.Count)];
+        if (chosenStudent.Status == Status.Active)
+        {
+            return chosenStudent;
+        } else
+        {
+            return ChooseStudent();
+        }
     }
     
 }

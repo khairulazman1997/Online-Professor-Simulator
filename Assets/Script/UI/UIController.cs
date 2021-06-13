@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     public CallView CallView;
     public List<ParticipantWebcam> Webcams;
 
+    //OpinionView Element
+    public StudentShareView ShareView;
+
     //SlidePickerView elements
     public SlidePickerView SlidePickerView;
 
@@ -46,6 +49,13 @@ public class UIController : MonoBehaviour
         UpdateView();
         CallView.gameObject.SetActive(true);
         SlidePickerView.gameObject.SetActive(false);
+    }
+
+    public void OpenStudentShareView(string opinion, Slide slide, Student student)
+    {
+        ShareView.student = student;
+        ShareView.slide = slide;
+        ShareView.UpdateStudentShareView(opinion);
     }
 
     public void StartSlidePicker()
